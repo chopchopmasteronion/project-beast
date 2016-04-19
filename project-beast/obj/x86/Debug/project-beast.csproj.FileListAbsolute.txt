@@ -7,5 +7,4 @@ c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast
 c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\obj\x86\Debug\project-beast.csprojResolveAssemblyReference.cache
 c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\obj\x86\Debug\project-beast.exe
 c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\obj\x86\Debug\project-beast.pdb
-c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\Content\Graphics\pic.jpg
-c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\Content\Graphics\player.xnb
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\Content\charactersheet.png

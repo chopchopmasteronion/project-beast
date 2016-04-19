@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using players;
+using Player;
 
 namespace project_beast
 {
@@ -12,8 +12,8 @@ namespace project_beast
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        // Represents the player
-        Player player;
+        // New code:
+        CharacterEntity character;
 
         public Game1()
         {
@@ -29,10 +29,8 @@ namespace project_beast
         /// </summary>
         protected override void Initialize()
         {
-            // Initialize the player class
-            player = new Player();
+            character = new CharacterEntity(this.GraphicsDevice);
             base.Initialize();
-
         }
 
         /// <summary>
@@ -43,10 +41,6 @@ namespace project_beast
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // Load the player resources
-            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
-            player.Initialize(Content.Load<Texture2D>("Graphics\\player"), playerPosition);
         }
 
         /// <summary>
@@ -65,11 +59,7 @@ namespace project_beast
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-
+            character.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -81,14 +71,14 @@ namespace project_beast
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // Start drawing
+            // We'll start all of our drawing here:
             spriteBatch.Begin();
 
-            // Draw the Player
-            player.Draw(spriteBatch);
-
-            // Stop drawing
+            // Now we can do any entity rendering:
+            character.Draw(spriteBatch);
+            // End renders all sprites to the screen:
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }

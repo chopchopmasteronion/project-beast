@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using players;
 
 namespace project_beast
 {
@@ -11,6 +12,8 @@ namespace project_beast
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        // Represents the player
+        Player player;
 
         public Game1()
         {
@@ -26,9 +29,10 @@ namespace project_beast
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
+            // Initialize the player class
+            player = new Player();
             base.Initialize();
+
         }
 
         /// <summary>
@@ -40,7 +44,9 @@ namespace project_beast
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            // Load the player resources
+            Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
+            player.Initialize(Content.Load<Texture2D>("Graphics\\player"), playerPosition);
         }
 
         /// <summary>
@@ -75,8 +81,14 @@ namespace project_beast
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            // Start drawing
+            spriteBatch.Begin();
 
+            // Draw the Player
+            player.Draw(spriteBatch);
+
+            // Stop drawing
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

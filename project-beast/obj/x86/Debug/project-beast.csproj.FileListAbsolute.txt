@@ -1,0 +1,9 @@
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\OpenTK.dll.config
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\project-beast.exe
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\project-beast.pdb
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\MonoGame.Framework.dll
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\NVorbis.dll
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\bin\DesktopGL\x86\Debug\OpenTK.dll
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\obj\x86\Debug\project-beast.csprojResolveAssemblyReference.cache
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\obj\x86\Debug\project-beast.exe
+c:\users\flexe\documents\visual studio 2015\Projects\project-beast\project-beast\obj\x86\Debug\project-beast.pdb

@@ -42,6 +42,10 @@
     <Compile Include="AnimationFrame.cs" />
     <Compile Include="CharacterEntity.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Inputs\BoardInput.cs" />
+    <Compile Include="Inputs\Input.cs" />
+    <Compile Include="Inputs\InputText.cs" />
+    <Compile Include="Inputs\PadInput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

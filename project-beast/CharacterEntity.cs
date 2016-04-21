@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using WalkingGame;
+using Inputs;
 
 
 namespace Player
@@ -21,6 +21,8 @@ namespace Player
         Animation standRight;
 
         Animation currentAnimation;
+        HardInputs input;
+        InputText inputText;
         float speed;
 
         public float X
@@ -87,39 +89,18 @@ namespace Player
 
         Vector2 GetDesiredVelocityFromInput()
         {
+            input = new HardInputs();
+            inputText = new InputText();
+            
             Vector2 desiredVelocity = new Vector2();
-
-            GamePadCapabilities capabilities = GamePad.GetCapabilities(
-                                               PlayerIndex.One);
-            // If there a controller attached, handle it
-            if (capabilities.IsConnected)
-            {
-                // Get the current state of Controller1
-                GamePadState state = GamePad.GetState(PlayerIndex.One);
-
-                // You can check explicitly if a gamepad has support for a certain feature
-                if (capabilities.HasLeftXThumbStick)
-                {
-                    // Check teh direction in X axis of left analog stick
-                    if (state.ThumbSticks.Left.X < -0.5f)
-                        desiredVelocity.X -= speed;
-                    if (state.ThumbSticks.Left.X > 0.5f)
-                        desiredVelocity.X += speed;
-                    if (state.ThumbSticks.Left.Y < -0.5f)
-                        desiredVelocity.Y += speed;
-                    if (state.ThumbSticks.Left.Y > 0.5f)
-                        desiredVelocity.Y -= speed;
-                }
-
-                // You can also check the controllers "type"
-                /*
-                if (capabilities.GamePadType == GamePadType.GamePad)
-                {
-                    if (state.IsButtonDown(Buttons.A))
-                        Exit();
-                }
-                */
-            }
+                if (input.GetInputDirection() == inputText.RIGHT)
+                    desiredVelocity.X -= speed;
+                if (input.GetInputDirection() == inputText.LEFT)
+                    desiredVelocity.X += speed;
+                if (input.GetInputDirection() == inputText.UP)
+                    desiredVelocity.Y += speed;
+                if (input.GetInputDirection() == inputText.DOWN)
+                    desiredVelocity.Y -= speed;
             return desiredVelocity;
         }
 
